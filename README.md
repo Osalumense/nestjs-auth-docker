@@ -219,6 +219,8 @@ npm run format
 
 ### Database Migrations
 
+This project includes TypeORM migrations for database schema management. You can use either npm scripts or make commands:
+
 ```bash
 # Run migrations
 npm run migration:run
@@ -239,6 +241,35 @@ make migration-show
 npm run migration:generate src/migrations/MigrationName
 # or
 make migration-generate
+```
+
+### Make Commands
+
+The project includes a Makefile with convenient commands:
+
+```bash
+# Development
+make install          # Install dependencies
+make start           # Start the application
+make dev             # Start in development mode
+make build           # Build the application
+make test            # Run tests
+
+# Database Operations
+make migration-run      # Run pending migrations
+make migration-revert   # Revert the last migration
+make migration-show     # Show migration status
+make migration-generate # Generate a new migration
+
+# Docker Operations
+make docker-build    # Build Docker image
+make docker-up       # Start with Docker Compose
+make docker-down     # Stop Docker Compose
+make docker-logs     # View Docker logs
+
+# Utilities
+make clean          # Clean build artifacts
+make help           # Show available commands
 ```
 
 ## Security Notes
